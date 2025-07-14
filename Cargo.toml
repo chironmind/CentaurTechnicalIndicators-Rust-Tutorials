@@ -1,0 +1,32 @@
+[package]
+name = "rustti_tutorials"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rust_ti = "2.0.1"
+
+[dev-dependencies]
+rust_ti = "2.0.1"
+plotters = "0.3"
+
+[[example]]
+name = "getting_started"
+path = "examples/getting_started.rs"
+
+[[example]]
+name = "first_strategy"
+path = "examples/first_strategy.rs"
+
+[[example]]
+name = "choose_right_model"
+path = "examples/choose_right_model.rs"
+
+[[example]]
+name = "backtest"
+path = "examples/backtest.rs"
+
+[[example]]
+name = "visualization"
+path = "examples/visualization.rs"
+

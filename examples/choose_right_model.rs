@@ -1,0 +1,102 @@
+use rust_ti::momentum_indicators::bulk::relative_strength_index;
+use rust_ti::ConstantModelType;
+
+fn main() {
+    let prices = vec![
+        5234.18, 5218.19, 5203.58, 5248.49, 5254.35, 5243.77, 5205.81, 5211.49, 5147.21, 5204.34,
+        5202.39, 5209.91, 5160.64, 5199.06, 5123.41, 5061.82, 5051.41, 5022.21, 5011.12, 4967.23,
+        5010.60, 5070.55, 5071.63, 5048.42, 5099.96, 5116.17, 5035.69, 5018.39, 5064.20, 5127.79,
+        5180.74, 5187.70, 5187.67, 5214.08, 5222.68, 5221.42, 5246.68, 5308.15, 5297.10, 5303.27,
+        5308.13, 5321.41, 5307.01, 5267.84, 5304.72, 5306.04, 5266.95, 5235.48, 5277.51, 5283.40,
+        5291.34, 5354.03, 5352.96, 5346.99, 5360.79, 5375.32, 5421.03, 5433.74, 5431.60, 5473.23,
+        5487.03, 5473.17, 5464.62, 5447.87, 5469.30, 5477.90, 5482.87, 5460.48, 5475.09, 5509.01,
+        5537.02, 5567.19, 5572.85, 5576.98, 5633.91, 5584.54, 5615.35, 5631.22, 5667.20, 5588.27,
+        5544.59, 5505.00, 5564.41, 5555.74, 5427.13, 5399.22, 5459.10, 5463.54, 5436.44, 5522.30,
+        5446.68, 5346.56, 5186.33, 5240.03, 5199.50, 5319.31, 5344.16, 5344.39, 5434.43, 5455.21,
+        5543.22, 5554.25, 5608.25, 5597.12, 5620.85, 5570.64, 5634.61, 5616.84, 5625.80, 5592.18,
+        5591.96, 5648.40, 5528.93, 5520.07, 5503.41, 5408.42, 5471.05, 5495.52, 5554.13, 5595.76,
+        5626.02, 5633.09, 5634.58, 5618.26, 5713.64, 5702.55, 5718.57, 5732.93, 5722.26, 5745.37,
+        5738.17, 5762.48, 5708.75, 5709.54, 5699.94, 5751.07, 5695.94, 5751.13, 5792.04, 5780.05,
+        5815.03, 5859.85, 5815.26, 5842.47, 5841.47, 5864.67, 5853.98, 5851.20, 5797.42, 5809.86,
+        5808.12, 5823.52, 5832.92, 5813.67, 5705.45, 5728.80, 5712.69, 5782.76, 5929.04, 5973.10,
+        5995.54, 6001.35, 5983.99, 5985.38, 5949.17, 5870.62, 5893.62, 5916.98, 5917.11, 5948.71,
+        5969.34, 5987.37, 6021.63, 5998.74, 6032.38, 6047.15, 6049.88, 6086.49, 6075.11, 6090.27,
+        6052.85, 6034.91, 6084.19, 6051.25, 6051.09, 6074.08, 6050.61, 5872.16, 5867.08, 5930.85,
+        5974.07, 6040.04, 6037.59, 5970.84, 5906.94, 5881.63, 5868.55, 5942.47, 5975.38, 5909.03,
+        5918.25, 5827.04, 5836.22, 5842.91, 5949.91, 5937.34, 5996.66, 6049.24, 6086.37, 6118.71,
+        6101.24, 6012.28, 6067.70, 6039.31, 6071.17, 6040.53, 5994.57, 6037.88, 6061.48, 6083.57,
+        6025.99, 6066.44, 6068.50, 6051.97, 6115.07, 6114.63, 6129.58, 6144.15, 6117.52, 6013.13,
+        5983.25, 5955.25,
+    ];
+
+    let period: usize = 5;
+
+    let rsi_ma = relative_strength_index(&prices, ConstantModelType::SimpleMovingAverage, period);
+    let rsi_sma =
+        relative_strength_index(&prices, ConstantModelType::SmoothedMovingAverage, period);
+    let rsi_ema =
+        relative_strength_index(&prices, ConstantModelType::ExponentialMovingAverage, period);
+
+    let mut rsi_ma_rating = 0;
+    let mut rsi_sma_rating = 0;
+    let mut rsi_ema_rating = 0;
+
+    for i in 5..prices.len() - 1 {
+        let rsi_ma_val = rsi_ma[i - 5];
+        let rsi_sma_val = rsi_sma[i - 5];
+        let rsi_ema_val = rsi_ema[i - 5];
+        let price = prices[i];
+
+        if rsi_ma_val < 30.0 {
+            println!(
+                "Buy signal at index {}: price={}, RSI(MA)={}",
+                i, price, rsi_ma_val
+            );
+
+            if prices[i + 1] > prices[i] {
+                println!("Signal was correct");
+                rsi_ma_rating += 1;
+            } else {
+                println!("Signal was incorrect");
+            }
+        }
+
+        if rsi_sma_val < 30.0 {
+            println!(
+                "Buy signal at index {}: price={}, RSI(SMA)={}",
+                i, price, rsi_sma_val
+            );
+
+            if prices[i + 1] > prices[i] {
+                println!("Signal was correct");
+                rsi_sma_rating += 1;
+            } else {
+                println!("Signal was incorrect");
+            };
+        }
+
+        if rsi_ema_val < 30.0 {
+            println!(
+                "Buy signal at index {}: price={}, RSI(EMA)={}",
+                i, price, rsi_ema_val
+            );
+
+            if prices[i + 1] > prices[i] {
+                println!("Signal was correct");
+                rsi_ema_rating += 1;
+            } else {
+                println!("Signal was incorrect");
+            };
+        }
+    }
+
+    if rsi_ma_rating > rsi_sma_rating && rsi_ma_rating > rsi_ema_rating {
+        println!("Moving Average is the best model")
+    } else if rsi_sma_rating > rsi_ema_rating && rsi_sma_rating > rsi_ma_rating {
+        println!("Smoothed Moving Average is the best model")
+    } else if rsi_ema_rating > rsi_ma_rating && rsi_ema_rating > rsi_sma_rating {
+        println!("Exponential Moving Average is the best model")
+    } else {
+        println!("No clear winnder")
+    }
+}
