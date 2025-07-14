@@ -8,9 +8,11 @@ Tutorials are step-by-step, beginner-friendly guides that walk you through accom
 
 ## What you will find here
 
-- **Getting Started:** Your first steps with RustTI
-- **Choosing the right model:** An introduction to picking the right model for your indicators
-- **First Strategy:** A simplified tradin strategy that produces buy signals with the RSI and EMA
+- [**Getting Started:**](https://github.com/0100101001010000/RustTI-tutorials/blob/main/getting_started.md) Your first steps with RustTI
+- [**Choosing the right model:**](https://github.com/0100101001010000/RustTI-tutorials/blob/main/choose_right_model.md) An introduction to picking the right model for your indicators
+- [**First Strategy:**](https://github.com/0100101001010000/RustTI-tutorials/blob/main/first_strategy.md) A simplified trading strategy that produces buy signals with the RSI and EMA
+- [**Backtesting:**](https://github.com/0100101001010000/RustTI-tutorials/blob/main/backtest.md) A minimal backtester with the RSI to enter and exit trades
+- [**Visualization:**](https://github.com/0100101001010000/RustTI-tutorials/blob/main/visualization.md) A simple use case of the `plotters` library to visaulize the simple moving average
 
 ## How to use these tutorials
 
