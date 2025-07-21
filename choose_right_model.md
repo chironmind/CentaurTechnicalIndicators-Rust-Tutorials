@@ -1,4 +1,4 @@
-# Choosing the right Constant Modely Type for the RSI
+# Choosing the right Constant Model Type for the RSI
 
 In this tutorial, you'll learn how to choose the right **Constant Type Model** for the **Relative Strength Index (RSI)** .
 
@@ -101,9 +101,26 @@ if rsi_ma_rating > rsi_sma_rating && rsi_ma_rating > rsi_ema_rating {
 
 ## 🧪 Output
 
-You’ll see which Constant Model type is best suited for the RSI based on historical data
+```shell
+$ cargo run --example choose_right_model
 
-> The full code can be found at `./examples/choose_right_model.rs`
+Buy signal at index 8: price=5147.21, RSI(MA)=19.20772303595203
+Signal was correct
+Buy signal at index 8: price=5147.21, RSI(SMA)=16.602391052834022
+Signal was correct
+Buy signal at index 8: price=5147.21, RSI(EMA)=15.540173724212082
+Signal was correct
+[...]
+Buy signal at index 230: price=5983.25, RSI(MA)=18.387940700136852
+Signal was incorrect
+Buy signal at index 230: price=5983.25, RSI(SMA)=15.774597495527516
+Signal was incorrect
+Buy signal at index 230: price=5983.25, RSI(EMA)=14.72167846207877
+Signal was incorrect
+Exponential Moving Average is the best model
+```
+
+> The full code can be found at [`./examples/choose_right_model.rs`](./examples/choose_right_model.rs)
 
 ---
 

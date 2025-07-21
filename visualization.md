@@ -77,10 +77,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## 🧪 Output
 
-Generates an image: `ma_chart.png`
 You’ll see the price and MA overlaid in different colors
 
-> The full code can be found at `./examples/visualization.rs
+![MA Chart Example](./examples/ma_chart.png)
+
+> The full code can be found at [`./examples/visualization.rs`](./examples/visualization.rs)
 
 ---
 

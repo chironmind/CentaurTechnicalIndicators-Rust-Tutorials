@@ -30,7 +30,7 @@ rust_ti = "2.1"
 
 ---
 
-## Step 3: Calculat your first indicator
+## Step 3: Calculate your first indicator
 
 Replace the contents of `src/main.rs` with:
 
@@ -58,9 +58,13 @@ cargo run
 
 ## 🧪 Output
 
-You'll see the Simple moving average for your prices.
+```shell
+$ cargo run --example getting_started
 
-> The full code can be found at `./examples/getting_started.rs
+Simple MA values: [44.104, 44.202, 44.40399999999999]
+```
+
+> The full code can be found at [`./examples/getting_started.rs`](./examples/getting_started.rs)
 
 ---
 
