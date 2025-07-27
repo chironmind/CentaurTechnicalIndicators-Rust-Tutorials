@@ -88,4 +88,4 @@ Buy signal at index 204: price=5949.91, RSI=7.843420273956696, EMA=5852.07350710
 
 - Add sell signals
 - Add other indicators
-- Explore the [how-to guides](https://github.com/0100101001010000/RustTI-how-to-guides) to update period and models
+- Explore the [how-to guides](https://github.com/ChironMind/RustTI-how-to-guides) to update period and models

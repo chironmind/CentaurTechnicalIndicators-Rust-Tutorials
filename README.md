@@ -10,11 +10,11 @@ Tutorials are step-by-step, beginner-friendly guides that walk you through accom
 
 ## 🧭 What you will find here
 
-- [**Getting Started:**](https://github.com/0100101001010000/RustTI-tutorials/blob/main/getting_started.md) Your first steps with RustTI
-- [**Choosing the right model:**](https://github.com/0100101001010000/RustTI-tutorials/blob/main/choose_right_model.md) An introduction to picking the right model for your indicators
-- [**First Strategy:**](https://github.com/0100101001010000/RustTI-tutorials/blob/main/first_strategy.md) A simplified trading strategy that produces buy signals with the RSI and EMA
-- [**Backtesting:**](https://github.com/0100101001010000/RustTI-tutorials/blob/main/backtest.md) A minimal backtester with the RSI to enter and exit trades
-- [**Visualization:**](https://github.com/0100101001010000/RustTI-tutorials/blob/main/visualization.md) A simple use case of the `plotters` library to visualize the simple moving average
+- [**Getting Started:**](https://github.com/ChironMind/RustTI-tutorials/blob/main/getting_started.md) Your first steps with RustTI
+- [**Choosing the right model:**](https://github.com/ChironMind/RustTI-tutorials/blob/main/choose_right_model.md) An introduction to picking the right model for your indicators
+- [**First Strategy:**](https://github.com/ChironMind/RustTI-tutorials/blob/main/first_strategy.md) A simplified trading strategy that produces buy signals with the RSI and EMA
+- [**Backtesting:**](https://github.com/ChironMind/RustTI-tutorials/blob/main/backtest.md) A minimal backtester with the RSI to enter and exit trades
+- [**Visualization:**](https://github.com/ChironMind/RustTI-tutorials/blob/main/visualization.md) A simple use case of the `plotters` library to visualize the simple moving average
 
 ---
 
@@ -32,8 +32,8 @@ Tutorials are step-by-step, beginner-friendly guides that walk you through accom
 This repository is part of a structured documentation suite:
 
 - 📕 **Tutorials:** This repo!
-- 📘 **How-To Guides:** [See here](https://github.com/0100101001010000/RustTI-how-to-guides)
-- ⏱️ **Benchmarks:** [See here](github.com/0100101001010000/RustTI-benchmarks)
+- 📘 **How-To Guides:** [See here](https://github.com/ChironMind/RustTI-how-to-guides)
+- ⏱️ **Benchmarks:** [See here](github.com/ChironMind/RustTI-benchmarks)
 - 📙 **Explanations:** Coming soon
 - 📗 **Reference:** [See here](https://docs.rs/rust_ti/latest/rust_ti/)
 
