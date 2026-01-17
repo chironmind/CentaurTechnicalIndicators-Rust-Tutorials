@@ -54,4 +54,4 @@ _Suggest next steps or related tutorials._
 
 ---
 
-Thank you for helping improve RustTI Tutorials!
+Thank you for helping improve Centaur Technical Indicators Tutorials!

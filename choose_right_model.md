@@ -6,24 +6,24 @@ In this tutorial, you'll learn how to choose the right **Constant Type Model** f
 
 ## 🚀 Step-by-Step
 
-### Step 1: Add RustTI to your project
+### Step 1: Add Centaur Technical Indicators to your project
 
-Make sure `rust_ti` is in your `Cargo.toml`:
+Make sure `centaur_technical_indicators` is in your `Cargo.toml`:
 
 ```toml
 [dependencies]
-rust_ti = "2.1"
+centaur_technical_indicators = "2.1"
 ```
 
-> Check [crates.io](https://crates.io/crates/rust_ti) for the latest version
+> Check [crates.io](https://crates.io/crates/centaur_technical_indicators) for the latest version
 
 ---
 
 ## Step 2: Calculate the different RSI 
 
 ```rust
-use rust_ti::momentum_indicators::bulk::relative_strength_index;
-use rust_ti::ConstantModelType;
+use centaur_technical_indicators::momentum_indicators::bulk::relative_strength_index;
+use centaur_technical_indicators::ConstantModelType;
 
 [...]
 

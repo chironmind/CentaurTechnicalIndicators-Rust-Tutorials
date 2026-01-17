@@ -1,16 +1,16 @@
 ![RustTI-tutorials Banner](./assets/tutorial-banner.png)
 
-# RustTI Tutorials
+# Centaur Technical Indicators Tutorials
 
-Welcome to the official collection of tutorials for the RustTI project!
+Welcome to the official collection of tutorials for the Centaur Technical Indicators project!
 
-Tutorials are step-by-step, beginner-friendly guides that walk you through accomplishing something meaningful with RustTI from scratch. These are designed for users who are new to RustTI or want to learn the basics in a practical, hands-on way.
+Tutorials are step-by-step, beginner-friendly guides that walk you through accomplishing something meaningful with Centaur Technical Indicators from scratch. These are designed for users who are new to Centaur Technical Indicators or want to learn the basics in a practical, hands-on way.
 
 ---
 
 ## 🧭 What you will find here
 
-- [**Getting Started:**](https://github.com/ChironMind/RustTI-tutorials/blob/main/getting_started.md) Your first steps with RustTI
+- [**Getting Started:**](https://github.com/ChironMind/RustTI-tutorials/blob/main/getting_started.md) Your first steps with Centaur Technical Indicators
 - [**Choosing the right model:**](https://github.com/ChironMind/RustTI-tutorials/blob/main/choose_right_model.md) An introduction to picking the right model for your indicators
 - [**First Strategy:**](https://github.com/ChironMind/RustTI-tutorials/blob/main/first_strategy.md) A simplified trading strategy that produces buy signals with the RSI and EMA
 - [**Backtesting:**](https://github.com/ChironMind/RustTI-tutorials/blob/main/backtest.md) A minimal backtester with the RSI to enter and exit trades
@@ -35,7 +35,7 @@ This repository is part of a structured documentation suite:
 - 📘 **How-To Guides:** [See here](https://github.com/ChironMind/RustTI-how-to-guides)
 - ⏱️ **Benchmarks:** [See here](github.com/ChironMind/RustTI-benchmarks)
 - 📙 **Explanations:** Coming soon
-- 📗 **Reference:** [See here](https://docs.rs/rust_ti/latest/rust_ti/)
+- 📗 **Reference:** [See here](https://docs.rs/centaur_technical_indicators/latest/centaur_technical_indicators/)
 
 ---
 
