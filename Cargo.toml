@@ -4,10 +4,10 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-centaur_technical_indicators = "2.0.1"
+centaur_technical_indicators = "1.0.0"
 
 [dev-dependencies]
-centaur_technical_indicators = "2.0.1"
+centaur_technical_indicators = "1.0.0"
 plotters = "0.3"
 
 [[example]]
