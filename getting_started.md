@@ -12,8 +12,8 @@ Welcome! This tutorial will guide you through setting up a Rust project using [C
 ## Step 1: Create a new project
 
 ```bash
-cargo new rustti-demo
-cd rustti-demo
+cargo new centaur-demo
+cd centaur-demo
 ```
 
 ---
