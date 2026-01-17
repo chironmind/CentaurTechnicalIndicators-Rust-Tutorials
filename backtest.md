@@ -19,7 +19,7 @@ Ensure `centaur_technical_indicators` is in your `Cargo.toml`:
 
 ```toml
 [dependencies]
-centaur_technical_indicators = "2.1"
+centaur_technical_indicators = "1.0"
 ```
 
 ---

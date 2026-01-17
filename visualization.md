@@ -10,7 +10,7 @@ In `Cargo.toml`:
 
 ```toml
 [dependencies]
-centaur_technical_indicators = "2.1"
+centaur_technical_indicators = "1.0"
 plotters = "0.3"
 ```
 
