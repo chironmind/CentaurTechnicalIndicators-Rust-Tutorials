@@ -1,6 +1,6 @@
-use rust_ti::momentum_indicators::bulk::relative_strength_index;
-use rust_ti::moving_average::bulk::moving_average;
-use rust_ti::{ConstantModelType, MovingAverageType};
+use centaur_technical_indicators::momentum_indicators::bulk::relative_strength_index;
+use centaur_technical_indicators::moving_average::bulk::moving_average;
+use centaur_technical_indicators::{ConstantModelType, MovingAverageType};
 
 fn main() {
     let prices = vec![

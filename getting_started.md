@@ -1,6 +1,6 @@
-# Getting Started with RustTI
+# Getting Started with Centaur Technical Indicators
 
-Welcome! This tutorial will guide you through setting up a Rust project using [RustTI](https://crates.io/crates/rust_ti), a high-performance technical indicator library.
+Welcome! This tutorial will guide you through setting up a Rust project using [Centaur Technical Indicators](https://crates.io/crates/centaur_technical_indicators), a high-performance technical indicator library.
 
 ## Prerequisites
 
@@ -18,15 +18,15 @@ cd rustti-demo
 
 ---
 
-## Step 2: Add RustTI as a dependency
+## Step 2: Add Centaur Technical Indicators as a dependency
 
 In your `Cargo.toml` add:
 
 ```toml
 [dependencies]
-rust_ti = "2.1"
+centaur_technical_indicators = "2.1"
 ```
-> Check [crates.io](https://crates.io/crates/rust_ti) for the latest version
+> Check [crates.io](https://crates.io/crates/centaur_technical_indicators) for the latest version
 
 ---
 
@@ -35,8 +35,8 @@ rust_ti = "2.1"
 Replace the contents of `src/main.rs` with:
 
 ```rust
-use rust_ti::moving_average::bulk::moving_average;
-use rust_ti::MovingAverageType::Simple;
+use centaur_technical_indicators::moving_average::bulk::moving_average;
+use centaur_technical_indicators::MovingAverageType::Simple;
 
 fn main() {
     let prices = vec![44.34, 44.09, 44.15, 43.61, 44.33, 44.83, 45.10];
