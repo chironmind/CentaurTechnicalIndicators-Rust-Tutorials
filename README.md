@@ -10,11 +10,11 @@ Tutorials are step-by-step, beginner-friendly guides that walk you through accom
 
 ## 🧭 What you will find here
 
-- [**Getting Started:**](https://github.com/ChironMind/RustTI-tutorials/blob/main/getting_started.md) Your first steps with Centaur Technical Indicators
-- [**Choosing the right model:**](https://github.com/ChironMind/RustTI-tutorials/blob/main/choose_right_model.md) An introduction to picking the right model for your indicators
-- [**First Strategy:**](https://github.com/ChironMind/RustTI-tutorials/blob/main/first_strategy.md) A simplified trading strategy that produces buy signals with the RSI and EMA
-- [**Backtesting:**](https://github.com/ChironMind/RustTI-tutorials/blob/main/backtest.md) A minimal backtester with the RSI to enter and exit trades
-- [**Visualization:**](https://github.com/ChironMind/RustTI-tutorials/blob/main/visualization.md) A simple use case of the `plotters` library to visualize the simple moving average
+- [**Getting Started:**](https://github.com/ChironMind/CentaurTechnicalIndicators-Rust-Tutorials/blob/main/getting_started.md) Your first steps with Centaur Technical Indicators
+- [**Choosing the right model:**](https://github.com/ChironMind/CentaurTechnicalIndicators-Rust-Tutorials/blob/main/choose_right_model.md) An introduction to picking the right model for your indicators
+- [**First Strategy:**](https://github.com/ChironMind/CentaurTechnicalIndicators-Rust-Tutorials/blob/main/first_strategy.md) A simplified trading strategy that produces buy signals with the RSI and EMA
+- [**Backtesting:**](https://github.com/ChironMind/CentaurTechnicalIndicators-Rust-Tutorials/blob/main/backtest.md) A minimal backtester with the RSI to enter and exit trades
+- [**Visualization:**](https://github.com/ChironMind/CentaurTechnicalIndicators-Rust-Tutorials/blob/main/visualization.md) A simple use case of the `plotters` library to visualize the simple moving average
 
 ---
 
