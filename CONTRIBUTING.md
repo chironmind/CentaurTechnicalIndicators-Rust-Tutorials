@@ -1,8 +1,8 @@
-# Contributing to RustTI Tutorials
+# Contributing to Centaur Technical Indicators Tutorials
 
-Thank you for your interest in contributing to RustTI Tutorials! 🎉
+Thank you for your interest in contributing to Centaur Technical Indicators Tutorials! 🎉
 
-We welcome contributions from everyone, whether you’re new to RustTI, documentation, or open source in general.
+We welcome contributions from everyone, whether you’re new to Centaur Technical Indicators, documentation, or open source in general.
 
 ## Ways to Contribute
 
