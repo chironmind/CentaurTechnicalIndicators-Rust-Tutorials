@@ -69,6 +69,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "centaur_technical_indicators"
+version = "1.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ca5cdc00eed15c0bfa1a910c84dbbe6546b9ccdc117302ff73787f8ec2d91fa2"
+
+[[package]]
+name = "centaur_technical_indicators_tutorials"
+version = "0.1.0"
+dependencies = [
+ "centaur_technical_indicators",
+ "plotters",
+]
+
+[[package]]
 name = "cfg-if"
 version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -543,26 +557,12 @@ dependencies = [
 ]
 
 [[package]]
-name = "rust_ti"
-version = "2.0.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2913881c1af931e3a2550c336b6f4f9558129cc2ca4f717123b6501497e89e76"
-
-[[package]]
 name = "rustc_version"
 version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cfcb3a22ef46e85b45de6ee7e79d063319ebb6594faafcf1c225ea92ab6e9b92"
 dependencies = [
  "semver",
-]
-
-[[package]]
-name = "rustti_tutorials"
-version = "0.1.0"
-dependencies = [
- "plotters",
- "rust_ti",
 ]
 
 [[package]]

@@ -17,25 +17,25 @@ This is a common "momentum + trend" signal.
 
 ## 🚀 Step-by-Step
 
-### Step 1: Add RustTI to your project
+### Step 1: Add Centaur Technical Indicators to your project
 
-Make sure `rust_ti` is in your `Cargo.toml`:
+Make sure `centaur_technical_indicators` is in your `Cargo.toml`:
 
 ```toml
 [dependencies]
-rust_ti = "2.1"
+centaur_technical_indicators = "1.0"
 ```
 
-> Check [crates.io](https://crates.io/crates/rust_ti) for the latest version
+> Check [crates.io](https://crates.io/crates/centaur_technical_indicators) for the latest version
 
 ---
 
 ## Step 2: Calculate the RSI and EMA
 
 ```rust
-use rust_ti::moving_average::bulk::moving_average;
-use rust_ti::momentum_indicators::bulk::relative_strength_index;
-use rust_ti::{MovingAverageType, ConstantModelType};
+use centaur_technical_indicators::moving_average::bulk::moving_average;
+use centaur_technical_indicators::momentum_indicators::bulk::relative_strength_index;
+use centaur_technical_indicators::{MovingAverageType, ConstantModelType};
 
 [...]
 
@@ -88,4 +88,4 @@ Buy signal at index 204: price=5949.91, RSI=7.843420273956696, EMA=5852.07350710
 
 - Add sell signals
 - Add other indicators
-- Explore the [how-to guides](https://github.com/ChironMind/RustTI-how-to-guides) to update period and models
+- Explore the [how-to guides](https://github.com/ChironMind/CentaurTechnicalIndicators-Rust-How-to-Guides) to update period and models
