@@ -1,7 +1,7 @@
 use plotters::prelude::*;
 
-use rust_ti::moving_average::bulk::moving_average;
-use rust_ti::MovingAverageType::Simple;
+use centaur_technical_indicators::moving_average::bulk::moving_average;
+use centaur_technical_indicators::MovingAverageType::Simple;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let prices = vec![

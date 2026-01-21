@@ -15,11 +15,11 @@ In this tutorial, you'll build a minimal backtester that simulates a basic strat
 
 ## Step 1: Setup
 
-Ensure `rust_ti` is in your `Cargo.toml`:
+Ensure `centaur_technical_indicators` is in your `Cargo.toml`:
 
 ```toml
 [dependencies]
-rust_ti = "2.1"
+centaur_technical_indicators = "1.0"
 ```
 
 ---
@@ -28,8 +28,8 @@ rust_ti = "2.1"
 
 ```rust 
 
-use rust_ti::momentum_indicators::bulk::relative_strength_index;
-use rust_ti::ConstantModelType::ExponentialMovingAverage;
+use centaur_technical_indicators::momentum_indicators::bulk::relative_strength_index;
+use centaur_technical_indicators::ConstantModelType::ExponentialMovingAverage;
 
 [...]
 
