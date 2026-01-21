@@ -32,8 +32,8 @@ Tutorials are step-by-step, beginner-friendly guides that walk you through accom
 This repository is part of a structured documentation suite:
 
 - 📕 **Tutorials:** This repo!
-- 📘 **How-To Guides:** [See here](https://github.com/ChironMind/RustTI-how-to-guides)
-- ⏱️ **Benchmarks:** [See here](github.com/ChironMind/RustTI-benchmarks)
+- 📘 **How-To Guides:** [See here](https://github.com/ChironMind/CentaurTechnicalIndicators-Rust-How-to-Guides)
+- ⏱️ **Benchmarks:** [See here](https://github.com/ChironMind/CentaurTechnicalIndicators-Rust-Benchmarks)
 - 📙 **Explanations:** Coming soon
 - 📗 **Reference:** [See here](https://docs.rs/centaur_technical_indicators/latest/centaur_technical_indicators/)
 
