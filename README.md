@@ -1,5 +1,3 @@
-![RustTI-tutorials Banner](./assets/tutorial-banner.png)
-
 # Centaur Technical Indicators Tutorials
 
 Welcome to the official collection of tutorials for the Centaur Technical Indicators project!
