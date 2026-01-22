@@ -25,85 +25,93 @@ centaur_technical_indicators = "1.0"
 use centaur_technical_indicators::momentum_indicators::bulk::relative_strength_index;
 use centaur_technical_indicators::ConstantModelType;
 
-[...]
-
-let rsi_ma = relative_strength_index(&prices, ConstantModelType::SimpleMovingAverage, 5);
-let rsi_sma = relative_strength_index(&prices, ConstantModelType::SmoothedMovingAverage, 5);
-let rsi_ema = relative_strength_index(&prices, ConstantModelType::ExponentialMovingAverage, 5);
+pub fn main() {
+    // Fetch price data
+    let rsi_ma = relative_strength_index(&prices, ConstantModelType::SimpleMovingAverage, 5).unwrap();
+    let rsi_sma = relative_strength_index(&prices, ConstantModelType::SmoothedMovingAverage, 5).unwrap();
+    let rsi_ema = relative_strength_index(&prices, ConstantModelType::ExponentialMovingAverage, 5).unwrap();
+}
 ```
 
 ---
 
 ## Step 3: Rate the different indicators
 
-This rating algorithm is overlysimplified, and is intended for demonstration purposes only.
+This rating algorithm is overly simplified, and is intended for demonstration purposes only.
 
 ```rust
+pub fn main() {
+    // [...]
 
-let mut rsi_ma_rating = 0;
-let mut rsi_sma_rating = 0;
-let mut rsi_ema_rating = 0;
+    let mut rsi_ma_rating = 0;
+    let mut rsi_sma_rating = 0;
+    let mut rsi_ema_rating = 0;
 
-for i in 5..prices.len()-1 {
-    let rsi_ma_val = rsi_ma[i - 5];
-    let rsi_sma_val = rsi_sma[i - 5];
-    let rsi_ema_val = rsi_ema[i - 5];
-    let price = prices[i];
+    for i in 5..prices.len() - 1 {
+        let rsi_ma_val = rsi_ma[i - 5];
+        let rsi_sma_val = rsi_sma[i - 5];
+        let rsi_ema_val = rsi_ema[i - 5];
+        let price = prices[i];
 
-    if rsi_ma_val < 30.0 {
-        println!("Buy signal at index {}: price={}, RSI(MA)={}", i, price, rsi_ma_val);
-        
-        if prices[i+1] > prices[i] {
-            println!("Signal was correct");
-            rsi_ma_rating += 1;
-        } else {
-            println!("Signal was incorrect");
+        if rsi_ma_val < 30.0 {
+            println!("Buy signal at index {}: price={}, RSI(MA)={}", i, price, rsi_ma_val);
+
+            if prices[i + 1] > prices[i] {
+                println!("Signal was correct");
+                rsi_ma_rating += 1;
+            } else {
+                println!("Signal was incorrect");
+            }
+        }
+
+        if rsi_sma_val < 30.0 {
+            println!("Buy signal at index {}: price={}, RSI(SMA)={}", i, price, rsi_sma_val);
+
+
+            if prices[i + 1] > prices[i] {
+                println!("Signal was correct");
+                rsi_sma_rating += 1;
+            } else {
+                println!("Signal was incorrect");
+            };
+        }
+
+        if rsi_ema_val < 30.0 {
+            println!("Buy signal at index {}: price={}, RSI(EMA)={}", i, price, rsi_ema_val);
+
+            if prices[i + 1] > prices[i] {
+                println!("Signal was correct");
+                rsi_ema_rating += 1;
+            } else {
+                println!("Signal was incorrect");
+            };
         }
     }
-    
-    if rsi_sma_val < 30.0 {
-        println!("Buy signal at index {}: price={}, RSI(SMA)={}", i, price, rsi_sma_val);
-     
 
-        if prices[i+1] > prices[i] {
-            println!("Signal was correct");
-            rsi_sma_rating += 1;
-        } else {
-            println!("Signal was incorrect");
-        };
-    }
-
-    if rsi_ema_val < 30.0 {
-        println!("Buy signal at index {}: price={}, RSI(EMA)={}", i, price, rsi_ema_val);
-     
-        if prices[i+1] > prices[i] {
-            println!("Signal was correct");
-            rsi_ema_rating += 1;
-        } else {
-            println!("Signal was incorrect");
-        };
+    if rsi_ma_rating > rsi_sma_rating && rsi_ma_rating > rsi_ema_rating {
+        println!("Moving Average is the best model")
+    } else if rsi_sma_rating > rsi_ema_rating && rsi_sma_rating > rsi_ma_rating {
+        println!("Smoothed Moving Average is the best model")
+    } else if rsi_ema_rating > rsi_ma_rating && rsi_ema_rating > rsi_sma_rating {
+        println!("Exponential Moving Average is the best model")
+    } else {
+        println!("No clear winner")
     }
 }
-
-if rsi_ma_rating > rsi_sma_rating && rsi_ma_rating > rsi_ema_rating {
-    println!("Moving Average is the best model")
-} else if rsi_sma_rating > rsi_ema_rating && rsi_sma_rating > rsi_ma_rating {
-    println!("Smoothed Moving Average is the best model")
-} else if rsi_ema_rating > rsi_ma_rating && rsi_ema_rating > rsi_sma_rating {
-    println!("Exponential Moving Average is the best model")
-} else {
-    println!("No clear winnder")
-}
-
 ```
 
 ---
 
 ## 🧪 Output
 
-```shell
-$ cargo run --example choose_right_model
+> A full runnable example can be found at [`./examples/choose_right_model.rs`](./examples/choose_right_model.rs)
 
+Run:
+```shell
+cargo run --example choose_right_model
+```
+Example output:
+```
 Buy signal at index 8: price=5147.21, RSI(MA)=19.20772303595203
 Signal was correct
 Buy signal at index 8: price=5147.21, RSI(SMA)=16.602391052834022
@@ -120,14 +128,12 @@ Signal was incorrect
 Exponential Moving Average is the best model
 ```
 
-> The full code can be found at [`./examples/choose_right_model.rs`](./examples/choose_right_model.rs)
-
 ---
 
 ## Next steps
 
 - Improve rating algorithm by adding punishment
 - Add other variants of `ConstantTypeModel`
-- Try with different indicators
+-  [First Strategy](./first_strategy.md) - Build a simple trading strategy using RSI and EMA
 
 

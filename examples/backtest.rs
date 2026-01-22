@@ -29,7 +29,7 @@ fn main() {
         5983.25, 5955.25,
     ];
 
-    let rsi = relative_strength_index(&prices, ExponentialMovingAverage, 5);
+    let rsi = relative_strength_index(&prices, ExponentialMovingAverage, 5).unwrap();
 
     let mut in_position = false;
     let mut entry_price = 0.0;

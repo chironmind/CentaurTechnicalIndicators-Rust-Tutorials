@@ -31,11 +31,11 @@ fn main() {
 
     let period: usize = 5;
 
-    let rsi_ma = relative_strength_index(&prices, ConstantModelType::SimpleMovingAverage, period);
+    let rsi_ma = relative_strength_index(&prices, ConstantModelType::SimpleMovingAverage, period).unwrap();
     let rsi_sma =
-        relative_strength_index(&prices, ConstantModelType::SmoothedMovingAverage, period);
+        relative_strength_index(&prices, ConstantModelType::SmoothedMovingAverage, period).unwrap();
     let rsi_ema =
-        relative_strength_index(&prices, ConstantModelType::ExponentialMovingAverage, period);
+        relative_strength_index(&prices, ConstantModelType::ExponentialMovingAverage, period).unwrap();
 
     let mut rsi_ma_rating = 0;
     let mut rsi_sma_rating = 0;

@@ -32,8 +32,8 @@ fn main() {
 
     let period: usize = 5;
 
-    let rsi = relative_strength_index(&prices, ConstantModelType::ExponentialMovingAverage, period);
-    let ema = moving_average(&prices, MovingAverageType::Exponential, period);
+    let rsi = relative_strength_index(&prices, ConstantModelType::ExponentialMovingAverage, period).unwrap();
+    let ema = moving_average(&prices, MovingAverageType::Exponential, period).unwrap();
 
     for i in 5..prices.len() {
         let rsi_val = rsi[i - 5];

@@ -31,7 +31,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         5983.25, 5955.25,
     ];
 
-    let ma = moving_average(&prices, Simple, 5);
+    let ma = moving_average(&prices, Simple, 5)?;
 
     let root = BitMapBackend::new("ma_chart.png", (800, 600)).into_drawing_area();
     root.fill(&WHITE)?;

@@ -4,7 +4,8 @@
 
 Welcome to the official collection of tutorials for the Centaur Technical Indicators project!
 
-Tutorials are step-by-step, beginner-friendly guides that walk you through accomplishing something meaningful with Centaur Technical Indicators from scratch. These are designed for users who are new to Centaur Technical Indicators or want to learn the basics in a practical, hands-on way.
+Tutorials are step-by-step, beginner-friendly guides that walk you through accomplishing something meaningful with Centaur Technical Indicators from scratch. 
+These are designed for users who are new to Centaur Technical Indicators or want to learn the basics in a practical, hands-on way.
 
 ---
 
@@ -34,7 +35,7 @@ This repository is part of a structured documentation suite:
 - 📕 **Tutorials:** This repo!
 - 📘 **How-To Guides:** [See here](https://github.com/ChironMind/CentaurTechnicalIndicators-Rust-How-to-Guides)
 - ⏱️ **Benchmarks:** [See here](https://github.com/ChironMind/CentaurTechnicalIndicators-Rust-Benchmarks)
-- 📙 **Explanations:** Coming soon
+- 📙 **Explanations:** [centaurlabs.pages.dev](https://centaurlabs.pages.dev/)
 - 📗 **Reference:** [See here](https://docs.rs/centaur_technical_indicators/latest/centaur_technical_indicators/)
 
 ---
