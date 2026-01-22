@@ -1,6 +1,7 @@
 # Run a Simple Backtest Loop
 
-In this tutorial, you'll build a minimal backtester that simulates a basic strategy using **RSI** to enter and exit trades. This helps you understand how strategy logic behaves over time.
+In this tutorial, you'll build a minimal backtester that simulates a basic strategy using **RSI** to enter and exit trades. 
+This helps you understand how strategy logic behaves over time.
 
 ---
 
@@ -31,10 +32,10 @@ centaur_technical_indicators = "1.0"
 use centaur_technical_indicators::momentum_indicators::bulk::relative_strength_index;
 use centaur_technical_indicators::ConstantModelType::ExponentialMovingAverage;
 
-[...]
-
-let rsi = relative_strength_index(&prices, ExponentialMovingAverage, 5); 
-
+pub fn main() {
+    // [...]
+    let rsi = relative_strength_index(&prices, ExponentialMovingAverage, 5).unwrap();
+}
 ```
 
 ---
@@ -42,34 +43,40 @@ let rsi = relative_strength_index(&prices, ExponentialMovingAverage, 5);
 ## Step 3: Backtest loop
 
 ```rust
+pub fn main() {
+    // [...]
+    let mut in_position = false;
+    let mut entry_price = 0.0;
 
-let mut in_position = false;
-let mut entry_price = 0.0;
+    for i in 5..prices.len() {
+        let price = prices[i];
+        let rsi_val = rsi[i - 5];
 
-for i in 5..prices.len() {
-    let price = prices[i];
-    let rsi_val = rsi[i - 5];
-
-    if !in_position && rsi_val < 30.0 {
-        in_position = true;
-        entry_price = price;
-        println!("BUY at index {}: price = {:.2}, RSI = {:.2}", i, price, rsi_val);
-    } else if in_position && rsi_val > 70.0 {
-        in_position = false;
-        let profit = price - entry_price;
-        println!("SELL at index {}: price = {:.2}, RSI = {:.2}, Profit = {:.2}", i, price, rsi_val, profit);
+        if !in_position && rsi_val < 30.0 {
+            in_position = true;
+            entry_price = price;
+            println!("BUY at index {}: price = {:.2}, RSI = {:.2}", i, price, rsi_val);
+        } else if in_position && rsi_val > 70.0 {
+            in_position = false;
+            let profit = price - entry_price;
+            println!("SELL at index {}: price = {:.2}, RSI = {:.2}, Profit = {:.2}", i, price, rsi_val, profit);
+        }
     }
 }
-
 ```
 
 ---
 
 ## 🧪 Output
 
-```shell
-$ cargo run --example backtest
+> The full code can be found at [`./examples/backtest.rs`](./examples/backtest.rs)
 
+Run:
+```shell
+cargo run --example backtest
+```
+Output:
+```
 BUY at index 8: price = 5147.21, RSI = 15.54
 SELL at index 11: price = 5209.91, RSI = 71.63, Profit = 62.70
 BUY at index 18: price = 5011.12, RSI = 0.00
@@ -101,10 +108,7 @@ SELL at index 206: price = 5996.66, RSI = 83.66, Profit = 169.62
 BUY at index 223: price = 6051.97, RSI = 21.63
 SELL at index 225: price = 6114.63, RSI = 71.96, Profit = 62.66
 BUY at index 230: price = 5983.25, RSI = 14.72
-
 ```
-
-> The full code can be found at [`./examples/backtest.rs`](./examples/backtest.rs)
 
 ---
 
@@ -112,4 +116,4 @@ BUY at index 230: price = 5983.25, RSI = 14.72
 
 - Track cumulative profit
 - Add stop-loss or take-profit
-- Support other indicators (e.g. MACD crossovers)
+- [Visualization](https://github.com/ChironMind/CentaurTechnicalIndicators-Rust-Tutorials/blob/main/visualization.md) - A simple use case of the `plotters` library to visualize the simple moving average

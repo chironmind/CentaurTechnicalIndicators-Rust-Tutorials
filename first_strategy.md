@@ -37,10 +37,11 @@ use centaur_technical_indicators::moving_average::bulk::moving_average;
 use centaur_technical_indicators::momentum_indicators::bulk::relative_strength_index;
 use centaur_technical_indicators::{MovingAverageType, ConstantModelType};
 
-[...]
-
-let rsi = relative_strength_index(&prices, ConstantModelType::ExponentialMovingAverage, 5);
-let ema = moving_average(&prices, MovingAverageType::Exponential, 5);
+pub fn main() {
+    // [...]
+    let rsi = relative_strength_index(&prices, ConstantModelType::ExponentialMovingAverage, 5).unwrap();
+    let ema = moving_average(&prices, MovingAverageType::Exponential, 5).unwrap();
+}
 ```
 
 ---
@@ -48,13 +49,16 @@ let ema = moving_average(&prices, MovingAverageType::Exponential, 5);
 ## Step 3: Loop and check for signals
 
 ```rust
-for i in 5..prices.len() {
-    let rsi_val = rsi[i - 5];
-    let ema_val = ema[i - 5];
-    let price = prices[i];
+pub fn main() {
+    // [...]
+    for i in 5..prices.len() {
+        let rsi_val = rsi[i - 5];
+        let ema_val = ema[i - 5];
+        let price = prices[i];
 
-    if rsi_val < 30.0 && price > ema_val {
-        println!("Buy signal at index {}: price={}, RSI={}, EMA={}", i, price, rsi_val, ema_val);
+        if rsi_val < 30.0 && price > ema_val {
+            println!("Buy signal at index {}: price={}, RSI={}, EMA={}", i, price, rsi_val, ema_val);
+        }
     }
 }
 ```
@@ -63,9 +67,14 @@ for i in 5..prices.len() {
 
 ## 🧪 Output
 
-```shell
-$ cargo run --example first_strategy
+> The full code can be found at [`./examples/first_strategy.rs`](./examples/first_strategy.rs)
 
+Run:
+```shell
+cargo run --example first_strategy
+```
+Expected output:
+```
 Buy signal at index 9: price=5204.34, RSI=10.370911367310825, EMA=5192.766398104266
 Buy signal at index 20: price=5010.6, RSI=0, EMA=5004.590663507109
 Buy signal at index 44: price=5304.72, RSI=25.310005095973736, EMA=5294.27383886256
@@ -80,8 +89,6 @@ Buy signal at index 197: price=5942.47, RSI=0, EMA=5902.900521327015
 Buy signal at index 204: price=5949.91, RSI=7.843420273956696, EMA=5852.073507109006
 ```
 
-> The full code can be found at [`./examples/first_strategy.rs`](./examples/first_strategy.rs)
-
 ---
 
 ## Next steps
@@ -89,3 +96,4 @@ Buy signal at index 204: price=5949.91, RSI=7.843420273956696, EMA=5852.07350710
 - Add sell signals
 - Add other indicators
 - Explore the [how-to guides](https://github.com/ChironMind/CentaurTechnicalIndicators-Rust-How-to-Guides) to update period and models
+- [Backtesting](https://github.com/ChironMind/CentaurTechnicalIndicators-Rust-Tutorials/blob/main/backtest.md) - A minimal backtester with the RSI to enter and exit trades

@@ -41,7 +41,7 @@ use centaur_technical_indicators::MovingAverageType::Simple;
 fn main() {
     let prices = vec![44.34, 44.09, 44.15, 43.61, 44.33, 44.83, 45.10];
     let period: usize = 5;
-    let result = moving_average(&prices, Simple, period);
+    let result = moving_average(&prices, Simple, period).unwrap();
 
     println!("Simple MA values: {:?}", result);
 }
@@ -58,18 +58,21 @@ cargo run
 
 ## 🧪 Output
 
+> A full runnable example can be found at [`./examples/getting_started.rs`](./examples/getting_started.rs)
+
+Run:
 ```shell
-$ cargo run --example getting_started
-
-Simple MA values: [44.104, 44.202, 44.40399999999999]
+cargo run --example getting_started
 ```
-
-> The full code can be found at [`./examples/getting_started.rs`](./examples/getting_started.rs)
+Expected output:
+```shell
+Simple MA values: Ok([44.104, 44.202, 44.40399999999999])
+```
 
 ---
 
 ## Next steps
 
 - Try other indicators
-- Check out other tutorials in this repo
+- [Choosing the right model](https://github.com/ChironMind/CentaurTechnicalIndicators-Rust-Tutorials/blob/main/choose_right_model.md) - An introduction to picking the right model for your indicators
 

@@ -19,14 +19,13 @@ plotters = "0.3"
 ## Step 2: Calculate Simple Moving Average
 
 ```rust
-
 use centaur_technical_indicators::moving_average::bulk::moving_average;
 use centaur_technical_indicators::MovingAverageType::Simple;
 
-[...]
-
-let ma = moving_average(&prices, Simple, 5);
-
+pub fn main() {
+    // [...]
+    let ma = moving_average(&prices, Simple, 5);
+}
 ```
 
 ---
@@ -34,12 +33,11 @@ let ma = moving_average(&prices, Simple, 5);
 ## Step 3: Create line chart with Plotters
 
 ```rust
-
 use plotters::prelude::*;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
 
-    [...]
+    // [...]
 
     let root = BitMapBackend::new("ma_chart.png", (800, 600)).into_drawing_area();
     root.fill(&WHITE)?;
@@ -77,16 +75,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## 🧪 Output
 
-You’ll see the price and MA overlaid in different colors
+> You’ll see the price and MA overlaid in different colors
 
 ![MA Chart Example](./examples/ma_chart.png)
 
 > The full code can be found at [`./examples/visualization.rs`](./examples/visualization.rs)
 
 ---
-
-## Next steps
-
-- Add RSI or MACD as overlays
-- Try candlestick charts with OHLC data
-- Explore interactive plots using egui or iced
